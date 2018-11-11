@@ -21,7 +21,9 @@ bilinear <- function(x,y,z,x0,y0){
                   as.integer(ny),
                   PACKAGE="akima")
 
-    list(x=x0,y=y0,z=ret$z0)
+    z0 <- ret$z0
+    z0[z0 == -999.0] = NA_real_
+    list(x=x0,y=y0,z=z0)
 }
 
 

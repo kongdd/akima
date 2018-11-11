@@ -1,15 +1,19 @@
       SUBROUTINE BILIIP(X0,Y0,Z0,N0,X,Y,Z,NX,NY)
 
 C     A. Gebhardt
+C     Dongdong Kong, Add missing value
 
       IMPLICIT NONE
       INTEGER NX,NY,N0
       DOUBLE PRECISION X0(*),Y0(*),Z0(*),X(*),Y(*),Z(NX,*)
 
       DOUBLE PRECISION XT,YT,X1,Y1
+      DOUBLE PRECISION :: missing = -999.0
       INTEGER K,I,J
 
       DO 10 K=1,N0
+         Z0(K) = missing
+
          DO 20 I=1,NX-1
             DO 30 J=1,NY-1
                IF ((X(I).LE.X0(K)).AND.(X0(K).LE.X(I+1))) THEN
