@@ -1,5 +1,5 @@
 Package: akima
-Version: 0.6-2
+Version: 0.6-2.9000
 Date: 2016-12-16
 Title: Interpolation of Irregularly and Regularly Spaced Data
 Authors@R: c(person("Hiroshi", "Akima", role = c("aut", "cph"),
